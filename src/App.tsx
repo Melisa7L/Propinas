@@ -19,6 +19,18 @@ function App() {
   const totalOrders = savedOrders.length;
   // -------------------------------------------------------------
 
+  console.log("💾 Historial de Órdenes Guardadas:", savedOrders)
+
+  const totalMonto = savedOrders.reduce((sum, savedOrder) => {
+    // La propina se calcula como: (subtotal * porcentaje de propina)
+    const tipAmount = savedOrder.total;
+    return sum + tipAmount;
+  }, 0);
+  
+
+
+
+
   console.log("🛎️ Estado actual de la orden:", order)
   console.log("💾 Historial de Órdenes Guardadas:", savedOrders)
 
@@ -40,6 +52,9 @@ function App() {
                   </p>
                   <p className="text-xl font-bold text-gray-700">
                       Total de Propinas Acumuladas: <span className="text-green-600">${totalTips.toFixed(2)}</span>
+                  </p>
+                           <p className="text-xl font-bold text-gray-700">
+                      Monto total Acumulado: <span className="text-green-600">${totalMonto.toFixed(2)}</span>
                   </p>
               </div>
               
