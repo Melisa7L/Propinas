@@ -107,7 +107,7 @@ function App() {
               />
             </>
           ) : (
-            <p className="text-center">La orden esta vacia</p>
+            <></>
           )}
 
 
